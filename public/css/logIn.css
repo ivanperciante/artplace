@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 5%
+}
+.footer-styles{
+    margin-top: 0;
+}
+header{
+    margin-bottom: 0;
+}
+.register-link{
+    text-decoration: none;
+}
+
+.loginContainer{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: solid 3px #4f4f4f;
+    border-radius: 10px;
+    margin: 70px 0px;
+    width: 40%;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h2{
+    color:black;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.loginContainer input{
+    border-radius: 10px;
+    padding-left: 1%;
+    margin-left: 5%;
+    border: solid 2px #4f4f4f;
+    padding: 3px;
+    padding-top: 5px;
+    width: 80%;
+}
+
+.loginContainer label{
+    font-weight: bold;
+    margin-top: 4%;
+}
+
+.loginButton{
+    width: 50%;
+    margin-top: 7%;
+    margin-bottom: 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.loginButton button{
+    background-color: #FE1F62;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 30px 10px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.92);
+    transition-duration: 0.5s;
+}
+
+.loginButton button:hover{
+    box-shadow: 0px 0px 6px 3px black;
+    font-weight: 500;
+}
+form .login-checkbox{
+    margin-left: 0 !important;
+    padding: 10px;
+}
+
+@media (max-width: 460px) {
+
+    .loginContainer{
+        width: 90%;
+        margin-left: 2%;
+        margin-right: 2%;
+        padding-bottom: 3%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .loginContainer{
+        width: 60%;
+        
+    }
+}

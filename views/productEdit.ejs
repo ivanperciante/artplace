@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>artplace</title>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/signUp.css">
+
+    </head>
+<body>
+    <%- include ("./partials/header") %>
+    <main>
+        <section style="background-image: url('../images/general-bg.webp')">
+            <div class="form-container">
+            <h2>Modifica tu producto</h2>
+                <form class="form" action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <label for="productName">Nombre del producto</label>
+                    <input type="text" name="productName" id="productName" value="<%=product.productName%>">
+                    <div class="errores"><p id="message-error"></p></div>
+
+                    <label for="description">Descripción</label>
+                    <input type="text" name="description" id="description" value="<%=product.description%>">
+                    <div class="errores"><p id="message-error2"></p></div>
+
+                    <div class="profilePicInput">
+                        <label for="productImage">Foto de producto</label>
+                        <br>
+                        <img style="width:30%" src="/images/<%=product.img1%>" alt="">
+                        <br>
+                        <input type="file" name="img1" accept="image/*"  id="img1">
+                    </div>
+                    <div class="errores"><p id="message-error5"></p></div>
+
+                    <div class="profilePicInput">
+                        <label for="productImage">Foto de producto 2</label>
+                        <br>
+                        <img style="width:30%" src="/images/<%=product.img2%>" alt="">
+                        <br>
+                        <input type="file" name="img2" accept="image/*" id="img2">
+                    </div>
+                    <div class="errores"><p id="message-error6"></p></div>
+
+                    <div class="profilePicInput">
+                        <label for="productImage">Foto de producto 3</label>
+                        <br>
+                        <img style="width:30%" src="/images/<%=product.img3%>" alt="">
+                        <br>
+                        <input type="file" name="img3" accept="image/*" id="img3" value="<%=product.img3%>">
+                    </div>
+                    <div class="errores"><p id="message-error7"></p></div>
+
+                        <label for="price">Precio</label>
+                        <input type="text" name="price" id="price" value="<%=product.price%>">
+                        <div class="errores"><p id="message-error3"></p></div>
+
+
+                        <label for="price">Creador</label>
+                        <input type="text" name="creatorName" id="creatorName" value="<%=product.creatorName%>">
+
+                        <label for="sizes">Tamaño</label>
+                        <input type="text" name="sizes" id="sizes" value="<%=product.sizes%>">
+
+                        <label for="stock">Stock</label>
+                        <input type="text" name="stock" id="stock" value="<%=product.stock%>">
+                        <div class="errores"><p id="message-error4"></p></div>
+
+                    <div class="buttonContainer">
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%- include ("./partials/footer") %>
+    <script src="/js/productEditionValidation.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

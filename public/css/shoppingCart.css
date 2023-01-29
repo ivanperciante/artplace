@@ -1,0 +1,236 @@
+colores{
+    color: #29C6C1;
+    color: #FE1F62;
+    color: #F2D66A;
+    color: #6902DF;
+}
+body{
+    background-image: url('../images/general-bg.webp');
+}
+.maincarrito{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    padding-bottom: 100px
+}
+
+.carrito{
+    padding-right: 100px;
+        padding-bottom: 30px;
+
+}
+
+th,td{
+    padding:20px;
+    border-bottom: solid;
+    text-align: center;
+}
+
+.modulo_pago{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 30px;
+    background-color: #F2D66A;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px black;
+}
+.radio-delivery-input{
+   margin: 2% 5% 2% 0 ;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.codigo{
+    display: flex;
+    flex-direction: column;
+}
+
+.envios{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+.resumen_pago{
+    padding-top: 20px;
+}
+
+h2{
+    padding: 15px 0px;
+}
+
+p{
+    font-weight: 500;
+}
+
+.resumen_pago div{
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    width: 100px;
+}
+
+.boton-pagar{
+    background-color: #FE1F62;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 20px 10px 20px;
+    margin: 6% 0;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.92);
+    transition-duration: 0.5s;
+}
+.boton-pagar:hover{
+    box-shadow: 0px 0px 6px 3px black;
+    font-weight: 500;
+}
+
+.bono{
+    display: flex;
+    align-items: flex-end;
+}
+.discount-code-input{
+    background-color: white;
+    font-size: 18px;
+    padding: 7.5px;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+    height: 40px;
+}
+.discount-code-apply-button{
+    background-color: white;
+    padding: 10px;
+    color: grey;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 10px 10px 0px;
+    height: 40px;
+    border: none;
+    transition: all 450ms;
+}
+.discount-code-apply-button:hover{
+    color: black;
+}
+@media (max-width: 768px) {
+    .card-body{
+        font-size: 0.8rem;
+    }
+
+    .maincarrito{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+        flex-direction: column;
+    }
+
+    .carrito{
+        padding-right: 0px;
+    }
+
+    .resumen_pago div{
+        display: flex;
+        justify-content: center;
+    }
+    .modulo_pago{
+        margin-top: 40px;
+        align-items: center;
+        width: 70%;
+        align-self: center;
+        margin-bottom: 10%;
+    }
+}
+.quantity-input{
+    width: 50px;
+    border-radius: 10px;
+    padding: 2px 6px
+}
+.card-body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card-body strong{
+   
+    width: 15%;
+}
+.cardit{
+    margin: 30px;
+}
+.cart-image-container{
+    width: 100px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.cart-image-container img{
+width: 100%;
+}
+
+@media (max-width: 645px) {
+
+    .maincarrito{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+        flex-direction: column;
+        
+    }
+
+
+    .carrito table thead{
+        display:none
+    }
+
+    .carrito table, .carrito table tbody, .carrito table tr, .carrito table td{
+        display:block;
+        width: 100%;
+
+    }   
+
+    .carrito table tr{
+        margin-bottom: 15px;
+    }
+
+    .carrito table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .carrito table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left:0;
+        padding-left: 15px;
+        font-weight: bold;
+    }
+
+    .resumen_pago div{
+        display: flex;
+        justify-content: center;
+    }
+    .modulo_pago{
+        width: 90%;
+    }
+    .card-body{
+        font-size: 0.7rem;
+    }
+
+}
+
+

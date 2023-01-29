@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artplace</title>
+    <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/logIn.css">
+</head>
+<body>
+    <%- include ("./partials/header") %> 
+    <main>
+        <section style="background-image: url('../images/general-bg.webp')">
+            <div class="loginContainer">
+                <h2>Inicia sesión</h2>
+                <form action="/users/log" method="POST">
+
+                    <label for="userName">Correo electrónico</label>
+                    <input type="text" name="email" id="emailLogin"  required>
+                    <br>
+                    <p style="color:red" id="emailError"> <%= (locals.errors && errors.email? errors.email.msg : null) %> </p>
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" required>
+                    <br>
+                    <p style="color:red" id="passwordError"> <%= (locals.errors && errors.password? errors.password.msg : null) %> </p>
+
+                    <label for="">Recuerdame</label>
+                    <input type="checkbox" name="recuerdame" class="login-checkbox">
+
+
+                    <div class="loginButton">
+                        <button type="submit">Entrar</button>
+                    </div>
+                    <div>
+                        <p>¿No tenés cuenta? <a class="register-link" href="/users/register">Registrarme</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%- include ("./partials/footer") %> 
+    <script src="/js/userLogin.js"></script>
+</body>
+</html>

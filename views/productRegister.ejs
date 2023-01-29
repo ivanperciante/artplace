@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>artplace</title>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/signUp.css">
+
+    </head>
+<body>
+    <%- include ("./partials/header") %>
+    <main>
+        <section style="background-image: url('../images/general-bg.webp')">
+            <div class="form-container">
+            <h2>Registra tu producto</h2>
+                <form class='form' action="/products/create" method="POST" enctype="multipart/form-data">
+                    <label for="productName">Nombre del producto</label>
+                    <input type="text" name="productName" id="productName">
+                    <div class="errores"><p id="message-error"></p></div>
+
+                    <label for="price">Precio</label>
+                    <input type="text" name="price" id="price">
+                    <div class="errores"><p id="message-error3"></p></div>
+
+                    <label for="sizes">Tamaño</label>
+                    <input type="text" name="sizes" id="sizes">
+
+                    <label for="description">Descripción</label>
+                    <input type="text" name="description" id="description">
+                    <div class="errores"><p id="message-error2"></p></div>
+
+                    <label for="description">Creador</label>
+                    <input type="text" name="creatorName" id="creatorName" >
+
+                    <label for="description">Cantidad</label>
+                    <input type="text" name="stock" id="stock" placeholder="Cantidad de unidades a vender.">
+                    <div class="errores"><p id="message-error4"></p></div>
+
+                    <label for="description">Categoría</label>
+                    <select name="categoryId" id="categoryId">
+                        <option selected disabled>Selecciona una categoría.</option>
+                        <% for( let i = 0; i < categories.length; i++ ) { %>
+                        <option value="<%=categories[i].id%>"><%=categories[i].name%></option>
+                        <% } %>
+                    </select>
+
+
+                    <div class="profilePicInput">
+                        <label for="productImage">Foto principal</label>
+                        <input type="file" name="productImage1" accept="image/*" id="productImage1">
+                        <p style="color:red" id="fullNameError"> <%= (locals.errors && errors.image ? errors.image.msg : null) %> </p>
+                    </div>
+                    <div class="errores"><p id="message-error5"></p></div>
+                    <div class="profilePicInput">
+                        <label for="productImage">Foto de producto 2</label>
+                        <input type="file" name="productImage2" accept="image/*" id="productImage2">
+                    </div>
+                    <div class="errores"><p id="message-error6"></p></div>
+                    <div class="profilePicInput">
+                        <label for="productImage">Foto de producto 3</label>
+                        <input type="file" name="productImage3" accept="image/*" id="productImage3">
+                    </div>
+                    <div class="errores"><p id="message-error7"></p></div>
+
+                    <div class="buttonContainer">
+                        <button type="submit">Crear producto</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <%- include ("./partials/footer") %>
+    <script src="/js/productRegisterValidation.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

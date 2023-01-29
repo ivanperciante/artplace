@@ -1,0 +1,118 @@
+colores{
+    color: #29C6C1;
+    color: #FE1F62;
+    color: #F2D66A;
+    color: #6902DF;
+    color: #46CA48;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+footer ul{
+    list-style: none;
+}
+
+
+.footer-styles{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgb(135, 135, 135) 0%, rgb(24, 24, 24) 100%);
+    color: white;
+    border-radius: 5px 5px 0px 0px ;
+    box-shadow: 0px 2px 6px 2px black;
+    padding-bottom: 10px;
+}
+.footer-link:link .footer-link:visited .footer-link:active {
+    text-decoration:none;
+    color: white;
+}
+.social-media-links-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.single-icon-container{
+    margin: 20px;
+}
+.icons{
+    font-size: 2em;
+    border-radius: 50%;
+    border: solid 1px white;
+    color: white;
+    box-shadow: 0px 0px 6px 2px white;
+    position: relative;
+    padding:5px;
+    width: 1.5em;
+    justify-content: center;
+    display: flex;
+    transition: all 450ms;
+}
+.icons:hover{
+    position: relative;
+    top:1px;
+    width: 1.5em;
+    border-radius: 60%;
+}
+.footer-texts{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.website-rigths-text{
+    font-size: 12px;
+}
+
+.lists-style{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-menu{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.right-menu-container{
+    margin: 20px 50px 25px 50px;
+}
+footer li{
+    margin: 8px 0px 8px 0px;
+}
+
+.footer-styles a:link a:visited a:active{
+    text-decoration:none;
+    color: white;
+}
+footer a:link{
+    color:white;
+    text-decoration: none;
+}
+footer a:visited{
+    color:white;
+    text-decoration: none;
+}
+footer a:active{
+    
+    color:white;
+    text-decoration: none;
+    
+}
+
+@media (max-width: 480px) {
+
+    .right-menu-container{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

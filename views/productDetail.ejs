@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script src="https://kit.fontawesome.com/5309449a51.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artplace</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/product-detail.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+
+
+    <body>
+        <%- include ("./partials/header") %> 
+    <main>
+        <section class="product-container">
+            <div class="product-title-container">
+                <h2 class="product-title"><%=product.productName%></h2>
+            </div>
+        </section>
+
+        <div class="barrier">
+            <br>
+        </div>
+        <div class="main-product-container">
+            <section class="left-product-section">
+                <div class="product-miniature">
+                    <div class="miniature-img-box-overflow">
+                        <img src="/images/<%=product.img1%>" alt="" class="minature-image">
+                    </div>
+                    <p class="miniature-numers">1</p>
+                    <div class="miniature-img-box-overflow">
+                        <img src="/images/<%=product.img2%>" alt="" class="minature-image">
+                    </div>
+                    <p>2</p>
+                    <div class="miniature-img-box-overflow">
+                        <img src="/images/<%=product.img3%>" alt="" class="minature-image">
+                    </div>
+                    <p>3</p>
+                </div>
+            </section>
+            <section class="middle-product-section">
+                    <img src="/images/<%=product.img1%>" alt="" class="product-image">
+            </section>
+            <section class="right-product-section">
+                <div class="product-info">
+                    <div class="link-icons">
+                        <i class="fa-solid fa-link linkedicons"></i>
+                        <i class="fa-solid fa-ellipsis linkedicons"></i>
+                    </div>
+                    
+                    <h3 class="productName"><%=product.productName%></h3> 
+                    <div class="seller-creator-titles">
+                        <p class="seller-creator">Vendedor</p>
+                        <p class="seller-creator">Creador</p>
+                    </div> 
+                    <div class="seller-creator-photo-name">
+                        <div class="creator-seller-container">
+                            <img src="/images/vendedor-1.png" alt="" class="seller-creator-image">
+                            <p class="creator-seller-names">J. Jackson</p>
+                        </div>
+                        <div class="creator-seller-container">
+                            <img src="/images/creador-1.png" alt="" class="seller-creator-image">
+                            <p class="creator-seller-names" ><%=product.creatorName%></p>
+                        </div>
+
+                    </div>
+                    <article>
+                        <div class="product-description">
+                            <h4>Sobre la obra:</h4>
+                            <p><%=product.description%></p>
+                        </div>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </article>
+                    <article class="propularity-container">
+                        <h4 class="description-titles">Popularidad:</h4>
+                        <div class="popularity-level-stars">
+                            <% for( let i = 0; i < product.popularity; i++ ) { %>
+                               <i class="fa-solid fa-star star"></i>
+                            <% } %>
+                        </div>
+                    </article>
+                    <article>
+                        <div class="product-detail-price-container">
+                            <h4 class="usd">U$D</h4>
+                            <p class="price-text"><%=product.price%></p>
+                        </div>
+                        <div class="button-container">
+                            <button class="buy-button" href="#">AÑADIR AL CARRITO</button>
+                        </div>
+                        <% if (locals && locals.user) { %>
+                        <div class="editar-eliminar">
+                            <div class="button-container">
+                                <a href="/products/edit/<%=product.id%>"><button class="edition-button">EDITAR</button></a>
+                            </div>
+                            <div>
+                                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                    <div class="button-container">
+                                        <button class="delete-button" type="submit">ELIMINAR</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                           
+                    </article>
+                </div>
+            </section>
+        </div>
+        <div class="barrier">
+            <br>
+        </div>
+        <section class="recomended-products-container">
+            <h1 class="product-title">Relacionados</h1>
+            <div class="recomended-products">
+                <article class="little-product">
+                    <a href="#">
+                    <div class="recomended-image-title-container">
+                        <div class="img-box-overflow">
+                            <img src="/images/pencil-trooper.jpeg" alt="" class="recomended-product-img">
+                        </div>
+                        <h4 class="recomended-product-titles">Fett Alapiz</h4>
+                    </div>
+                    <div class="mini-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="recomended-price-usd">U$D</p>
+                    <p class="recomended-price-usd">72.00</p>
+                </a>
+                </article>
+                <article class="little-product">
+                    <a href="#" class="linked-recomended-item">
+                            <div class="recomended-image-title-container">
+                                <div class="img-box-overflow">
+                                    <img src="/images/chewie-paint.webp" alt="" class="recomended-product-img">
+                                </div>
+                                <h4 class="recomended-product-titles">Cuadro Chewie</h4>
+                            </div>
+                            <div class="mini-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="recomended-price-usd">U$D</p>
+                            <p class="recomended-price-usd">72.00</p>
+                    </a>
+                </article>
+                <article class="little-product">
+                    <a href="#">
+                    <div class="recomended-image-title-container">
+                        <div class="img-box-overflow">
+                            <img src="/images/pop-trooper.jpeg" alt="" class="recomended-product-img">
+                        </div>
+                        <h4 class="recomended-product-titles">Pop Trooper</h4>
+                    </div>
+                    <div class="mini-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="recomended-price-usd">U$D</p>
+                    <p class="recomended-price-usd">72.00</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <h3 class="productId"><%=product.id%></h3> 
+    </main>
+    <%- include ("./partials/footer") %> 
+    <script src="/js/buy-button.js"></script>
+</body>
+</html>

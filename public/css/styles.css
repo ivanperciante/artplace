@@ -1,0 +1,96 @@
+fuentes{
+    font-family: 'League Spartan', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+colores{
+    color: #29C6C1;
+    color: #FE1F62;
+    color: #F2D66A;
+    color: #9565cd;
+    color: #46CA48;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif
+}
+
+boxshadow{
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.92);
+}
+
+    /* BOTONES */
+.buttons{
+    background-color: #FE1F62;
+    /* El color del fondo puede variar */
+    color: white;
+        /* El color de la tipografía puede variar */
+    border: none;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 20px 10px 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.92);
+    transition-duration: 0.5s;
+}
+.buttons:hover{
+    box-shadow: 0px 0px 6px 3px black;
+    font-weight: 500;
+}
+    /* FIN - BOTONES */
+
+       /* SEPARADORES DE SECCIONES */ 
+       /* Para usar el separador debemos crear en nuestra
+       pagina de html un div con clase class="end-section-line"
+       para linkearla al siguiente estilo */ 
+.end-section-line{
+        background:linear-gradient(to top, #ededed 5%, #bab1ba 100%);
+        display: block;
+        margin: auto;
+        width: 90%;
+        border-radius: 5px;
+        box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.92);
+        margin-bottom: 30px;
+        margin-top: 30px;
+        height: 10px;
+}
+
+       /* FIN - SEPARADORES DE SECCIONES */ 
+
+       /* TITULARES DE SECCIONES */ 
+
+.sections-titles {
+    font-weight: 300;
+    font-size: 20px;
+    background-color: #F2D66A;
+    display: inline-block;
+    padding: 8px 8px 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 92%);
+}
+       /* FIN - TITULARES DE SECCIONES */ 
+
+       /*  TITULARES DE ARTICULOS */ 
+
+.articles-titles {
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+    background-color: #29C6C1;
+    display: inline-block;
+    padding: 8px 8px 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 1px rgb(0 0 0 / 92%);
+    width: fit-content;
+}
+
+       /*  FIN - TITULARES DE ARTICULOS */ 
+
+       /* Background general*/
+       body{
+        background-image: url('../images/general-bg.webp');
+       }
+       

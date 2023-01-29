@@ -1,0 +1,149 @@
+
+<% if (locals && locals.user && locals.user.profileImage) { %>
+ 
+
+    <header>
+        <div class="deployed-hamburger"></div>
+        <div class="top-header">
+            <div class="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="">
+                </a>
+            </div>
+            <form  class="form-header-searchbar" action="/products/search" method="POST">
+                <input autocomplete="off" type="text" class="header-searchbar-input" placeholder="Buscar musica, pinturas, artistas..." name="searchForm"></input>
+                <button class="submit-header-searchbar" type="submit"><i class="fa fa-search"></i></button>
+                <div id="search-bar">
+                    <li id='lis'>
+                        <a id='slinks' href=""></a>
+                    </li>
+                </div>
+            </form>
+
+            </div>
+    
+    
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-site">
+                    <li><a href="/" class="header-nav-links">Inicio</a></li>
+                    <li><a href="/products" class="header-nav-links">Todo</a></li>
+                    <li><a href="/products/promotions" class="header-nav-links">Promociones</a></li>
+
+                </ul>
+                <ul class="nav-icons">
+                    <li>
+                        <a href="/cart" class="header-nav-links"> 
+                            <i class="fa-solid fa-cart-shopping">
+                                <div class="cart-total-amount" id="cart-total-amount"></div>
+                            </i> 
+                        </a>
+                    </li>
+                    <li>
+                        <a id="hamburger" href="#" class="hamburger-menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+                    </li>
+                    
+                    <li class="profile" id="desplegable">
+                        <a href="/users/profile" class="header-profile-image">
+                            <div class="miniature-img-box-overflowH">
+                            <img src="/images/users/<%=locals.user.profileImage%>" alt="">
+                            </div>
+                            <ul class="profile-menu-1">
+                                <li class="cerrar-sesion">
+                                    <a href="/products/create">Crear producto</a>
+                                </li>
+                                <li class="cerrar-sesion">
+                                    <a href="/users/profile">Mi perfil</a>
+                                </li>
+                                <li class="cerrar-sesion">
+                                    <a href="/users/logout">Cerrar Sesión</a>
+                                </li>
+
+                            </ul>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    
+        </div>
+
+            <script src="/js/search.js"></script>
+            <div class="dark-ligth-mode" id="activeDarkMode">
+        
+                    <i class="fa-solid fa-moon"></i>
+        
+            </div>
+    </header>
+    
+    <script src="/js/search.js"></script>
+    <script src="/js/darkMode.js"></script>
+    <script src="/js/hamburger.js"></script>
+    <script src="/js/cartAmount.js"></script>
+    <script src="/js/responsiveSearchBar.js"></script>
+    <% } else{  %>
+
+ 
+    <header>
+        <div class="deployed-hamburger"></div>
+        <div class="top-header">
+            <div class="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="">
+                </a>
+            </div>
+            <form  class="form-header-searchbar" action="/products/search" method="POST">
+                <input autocomplete="off" type="text" class="header-searchbar-input" placeholder="Buscar musica, pinturas, artistas..." name="searchForm"></input>
+                <button class="submit-header-searchbar" type="submit"><i class="fa fa-search"></i></button>
+                <div id="search-bar">
+                    <li id='lis'>
+                        <a id='slinks' href=""></a>
+                    </li>
+                </div>
+            </form>
+            
+            
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-site">
+                    <li><a href="/" class="header-nav-links">Inicio</a></li>
+                    <li><a href="/products" class="header-nav-links">Todo</a></li>
+                    <li><a href="/products/promotions/" class="header-nav-links">Promociones</a></li>
+
+                </ul>
+                <ul class="nav-icons">
+                    <li>
+                        <a href="/cart" class="header-nav-links"> 
+                            <i class="fa-solid fa-cart-shopping">
+                                <div class="cart-total-amount" id="cart-total-amount"></div>
+                            </i> 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="hamburger" class="hamburger-menu"><i class="fa-solid fa-bars"></i></a>
+                    </li>
+                    <li class="sesion-links">
+                        <a href="/users/login" class="isesion">Iniciar sesión</a>
+                        <a href="/users/register" class="isesion">Registrarme</a>
+                        <a href="/users/login" class="responsive-login"><i class="fa-solid fa-user"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            
+        </div>
+        <div class="dark-ligth-mode" id="activeDarkMode">
+    
+                <i class="fa-solid fa-moon"></i>
+    
+        </div>
+    </header>
+    
+    <script src="/js/search.js"></script>
+    <script src="/js/darkMode.js"></script>
+    <script src="/js/hamburger.js"></script>
+    <script src="/js/cartAmount.js"></script>
+    <script src="/js/responsiveSearchBar.js"></script>
+ <% }%>
